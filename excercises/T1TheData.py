@@ -29,4 +29,4 @@ for i in range(3):
     for j in range(2):
         ax[i, j].imshow(dataset[12 + i + j * 3], cmap='gray')
         ax[i, j].axis('off')
-plt.show()
+# plt.show()
