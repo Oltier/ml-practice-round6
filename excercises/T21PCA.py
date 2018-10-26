@@ -9,18 +9,19 @@ def compute_pca(Z, d):
 
     # step1: compute the sample cov. matrix Q
     # YOUR CODE HERE
-    N = len(Z)
-    Q = np.multiply(1 / N, Z.T.dot(Z))
+    N = Z.shape[0]
+    Q = Z.T.dot(Z) / N
 
     # step2: compute the eigenvalues and eigenvectors (see introduction notebook)
     # YOUR CODE HERE
     eigvalues, eigvectors = np.linalg.eig(Q)
-
+    eigvalues = eigvalues.real
+    eigvectors = eigvectors.real
     # step3: Sort the eigenvectors by decreasing eigenvalues, choose the d largest eigenvalues, form W_pca
     # YOUR CODE HERE
     idx = eigvalues.argsort()[::-1]
     eigvalues = eigvalues[idx]
-    eigvectors = eigvectors[:,idx]
-    W_pca = eigvectors[:d]
+    eigvectors = eigvectors[:, idx]
+    W_pca = eigvectors[:, :d].T
 
-    return W_pca.real, eigvalues
+    return W_pca, eigvalues

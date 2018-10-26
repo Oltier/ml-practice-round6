@@ -29,18 +29,18 @@ def plot_error(eigvalues, max_d):
 plot_error(eigvalues, 30)
 
 
-# def plot_princ_comp(PCA):
-#     fig, ax = plt.subplots(1, 5, figsize=(15, 15))
-#     # select the principal components we are plotting
-#     # You can change these to see what other components look like
-#     plot_pd = [0, 4, 9, 14, 19]
-#
-#     for i in range(len(plot_pd)):
-#         ax[i].imshow(np.reshape(PCA[plot_pd[i]] * 255, (50, 50)), cmap='gray')
-#         ax[i].set_title("Principal Direction %d" % (plot_pd[i] + 1))
-#     plt.show()
-#
-#
+def plot_princ_comp(PCA):
+    fig, ax = plt.subplots(1, 5, figsize=(15, 15))
+    # select the principal components we are plotting
+    # You can change these to see what other components look like
+    plot_pd = [0, 4, 9, 14, 19]
+
+    for i in range(len(plot_pd)):
+        ax[i].imshow(np.reshape(PCA[plot_pd[i]] * 255, (50, 50)), cmap='gray')
+        ax[i].set_title("Principal Direction %d" % (plot_pd[i] + 1))
+    plt.show()
+
+
 # plot_princ_comp(PCA)
 #
 #

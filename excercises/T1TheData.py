@@ -23,10 +23,10 @@ def get_data_matrix_and_set():
 
 datamatrix, dataset = get_data_matrix_and_set()
 
-fig, ax = plt.subplots(3, 2, figsize=(10, 10), gridspec_kw={'wspace': 0, 'hspace': 0})
-
-for i in range(3):
-    for j in range(2):
-        ax[i, j].imshow(dataset[12 + i + j * 3], cmap='gray')
-        ax[i, j].axis('off')
+# fig, ax = plt.subplots(3, 2, figsize=(10, 10), gridspec_kw={'wspace': 0, 'hspace': 0})
+#
+# for i in range(3):
+#     for j in range(2):
+#         ax[i, j].imshow(dataset[12 + i + j * 3], cmap='gray')
+#         ax[i, j].axis('off')
 # plt.show()
